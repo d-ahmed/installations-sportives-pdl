@@ -44,4 +44,46 @@ csvfile.close()
 
 ## Ecriture des données dans une base de données relationnelle
 
-TODO
+Pour pouvoir démarrer rapidement, vous pouvez utiliser la base de données embarquée [SQLite](https://docs.python.org/3/library/sqlite3.html)
+
+Créez un script permettant d'initialiser la base de données : 
+
+```python
+import sqlite3
+
+conn = sqlite3.connect('installations.db')
+
+c = conn.cursor()
+
+c.execute("DROP TABLE IF EXISTS installations")
+c.execute('''CREATE TABLE installations
+             (numero integer, nom text)''')
+
+conn.commit()
+conn.close()
+```python
+
+Vous pouvez ensuite écrire et lire des données :
+
+```python
+import sqlite3
+
+conn = sqlite3.connect('installations.db')
+
+c = conn.cursor()
+
+c.execute('''INSERT INTO installations 
+	VALUES (721740002, 'Terrain de Pétanque')''')
+c.execute('''INSERT INTO installations 
+	VALUES (721750009, 'Ecole Publique')''')
+
+conn.commit()
+
+for row in c.execute('SELECT * FROM installations ORDER BY nom'):
+	print(row)
+
+conn.close()
+```
+
+L'objectif est d'insérer les données provenant des fichiers CSV.
+
