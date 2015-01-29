@@ -61,7 +61,7 @@ c.execute('''CREATE TABLE installations
 
 conn.commit()
 conn.close()
-```python
+```
 
 Vous pouvez ensuite écrire et lire des données :
 
