@@ -10,11 +10,51 @@ Trois jeux de données sont à récupérer, au format CSV :
 * [Equipements](http://data.paysdelaloire.fr/donnees/detail/equipements-sportifs-espaces-et-sites-de-pratiques-en-pays-de-la-loire-fiches-equipements)
 * [Activités](http://data.paysdelaloire.fr/donnees/detail/equipements-sportifs-espaces-et-sites-de-pratiques-en-pays-de-la-loire-activites-des-fiches-equ)
 
-Le langage de programmation utilisé est [Python](https://www.python.org)
+## Quelques conseils
+
+### Python 
+
+Le langage de programmation utilisé est [Python](https://www.python.org), en version 3.
 
 Si vous souhaitez apprendre les bases du langage, rendez-vous sur le site [Open Classrooms](http://openclassrooms.com/courses/apprenez-a-programmer-en-python) !
 
-## Lecture des données depuis les fichiers CSV
+### Organisation du code
+
+Ne mettez pas tout votre code dans le même fichier !
+
+Utilisez la notion de [module](https://docs.python.org/3/tutorial/modules.html) pour organiser votre code correctement. Par exemple : 
+
+* un package `model` pour les différentes classes de votre modèle de données (un module par classe).
+* un package `services` pour les traitements de votre application (un module par service).
+
+### Tests unitaires
+
+Pensez à tester votre code !
+
+Python propose plusieurs modules de tests unitaires : 
+
+* [unittest](https://docs.python.org/3/library/unittest.html)
+* [doctest](https://docs.python.org/3/library/doctest.html#module-doctest)
+
+Vous pouvez par exemple commencer avec unittest en suivant [le tutoriel correspondant sur Open Classrooms](http://openclassrooms.com/courses/apprenez-a-programmer-en-python/les-tests-unitaires-avec-unittest).
+
+### Documentation
+
+Pensez à documenter votre code !
+
+Python propose la notion de [docstrings](https://docs.python.org/3/tutorial/controlflow.html#documentation-strings) pour documenter votre code. Exemple : 
+
+```python
+def ma_fonction(x, y):
+    """
+        Ceci est la documentation de ma fonction
+    """
+    return ...
+```
+
+## Quelques exemples de code
+
+### Lecture des données depuis les fichiers CSV
 
 Créez un ensemble de classes permettant de modéliser les concepts liés aux installations sportives. Par exemple : 
 
@@ -42,7 +82,7 @@ with open('installations.csv', 'rt') as csvfile:
 csvfile.close()
 ```
 
-## Ecriture des données dans une base de données relationnelle
+### Ecriture des données dans une base de données relationnelle
 
 Pour pouvoir démarrer rapidement, vous pouvez utiliser la base de données embarquée [SQLite](https://docs.python.org/3/library/sqlite3.html)
 
