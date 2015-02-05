@@ -61,6 +61,14 @@ def ma_fonction(x, y):
     return ...
 ```
 
+## Base de données
+
+### Schéma de la base de données
+
+Par rapport au modèle UML présenté précédemment, un des schémas possibles pour la base de données est le suivant : 
+
+![database_model.png](images/database_model.png)
+
 ## Quelques exemples de code
 
 ### Lecture des données depuis les fichiers CSV
