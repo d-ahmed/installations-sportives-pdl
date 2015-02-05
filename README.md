@@ -10,9 +10,18 @@ Trois jeux de données sont à récupérer, au format CSV :
 * [Equipements](http://data.paysdelaloire.fr/donnees/detail/equipements-sportifs-espaces-et-sites-de-pratiques-en-pays-de-la-loire-fiches-equipements)
 * [Activités](http://data.paysdelaloire.fr/donnees/detail/equipements-sportifs-espaces-et-sites-de-pratiques-en-pays-de-la-loire-activites-des-fiches-equ)
 
+Toutes les colonnes des fichiers CSV ne vont pas forcément nous intéresser. N'utilisez que celle que vous trouvez intéressantes ! Par exemple pour les installations, l'adresse et les coordonnées GPS sont des données facilement exploitables (affichage sur une Google Map par exemple).
+
+Des liens existent entre les trois jeux de données : 
+
+* une installation possède un ou plusieurs équipements
+* une ou plusieurs activités peuvent être pratiquées sur un équipement donné.
+
+![installation_equpement_activite](http://yuml.me/5f867513)
+
 ## Quelques conseils
 
-### Python 
+### Python
 
 Le langage de programmation utilisé est [Python](https://www.python.org), en version 3.
 
