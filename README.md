@@ -155,3 +155,35 @@ conn.close()
 
 L'objectif est d'insérer les données provenant des fichiers CSV.
 
+
+### Exposition d'un service REST
+
+La librairie [Bottle](http://bottlepy.org/) permet de créer facilement des services REST.
+
+Pour faire un premier test, téléchargez le fichier `bottle.py` et placez le dans un dossier `libs` de votre projet (le dossier `libs` doit contenir un fichier vide nommé `__init__.py`).
+
+Lien vers la version 0.12.8 : [https://raw.githubusercontent.com/bottlepy/bottle/0.12.8/bottle.py](https://raw.githubusercontent.com/bottlepy/bottle/0.12.8/bottle.py)
+
+Voici le code permettant de faire le classique Hello World (fichier `rest-example.py`) : 
+
+```python
+from libs.bottle import route, template, run
+
+@route('/hello/<name>')
+def index(name):
+    return template('<b>Hello {{name}}</b>!', name=name)
+
+run(host='localhost', port=8080)
+```
+
+Lancez ensuite le programme : 
+
+	$> python3 rest-example.py
+	Bottle v0.12.8 server starting up (using WSGIRefServer())...
+	Listening on http://localhost:8080/
+	Hit Ctrl-C to quit.
+
+Vous pouvez vérifier que tout va bien :
+
+* soit via la commande `curl` : `curl -XGET http://localhost:8080/hello/world`
+* soit directement dans un navigateur : http://localhost:8080/hello/world
