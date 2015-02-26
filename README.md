@@ -19,7 +19,11 @@ Des liens existent entre les trois jeux de données :
 
 ![installation_equpement_activite](http://yuml.me/5f867513)
 
-## Quelques conseils
+## Architecture
+
+![architecture.png](images/architecture.png)
+
+## Quelques conseils pour le développement
 
 ### Python
 
