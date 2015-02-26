@@ -21,6 +21,13 @@ Des liens existent entre les trois jeux de données :
 
 ## Architecture
 
+L'application est composée de plusieurs composants ayant chacun un rôle bien défini.
+
+* Le composant `Admin` a pour rôle la création des tables de la base de données.
+* Le composant `Import` a pour rôle le remplissage des tables de la base de données à partir des fichiers CSV.
+* Le composant `Service` a pour rôle d'exposer les fonctionnalités de l'application, au travers de services REST.
+* Le composant `Application web` est destinée aux internautes et a pour rôle de proposer les fonctionnalités de l'application au travers de pages web.
+
 ![architecture.png](images/architecture.png)
 
 ## Quelques conseils pour le développement
