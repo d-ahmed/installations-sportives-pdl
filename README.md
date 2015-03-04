@@ -30,47 +30,6 @@ L'application est composée de plusieurs composants ayant chacun un rôle bien d
 
 ![architecture.png](images/architecture.png)
 
-## Quelques conseils pour le développement
-
-### Python
-
-Le langage de programmation utilisé est [Python](https://www.python.org), en version 3.
-
-Si vous souhaitez apprendre les bases du langage, rendez-vous sur le site [Open Classrooms](http://openclassrooms.com/courses/apprenez-a-programmer-en-python) !
-
-### Organisation du code
-
-Ne mettez pas tout votre code dans le même fichier !
-
-Utilisez la notion de [module](https://docs.python.org/3/tutorial/modules.html) pour organiser votre code correctement. Par exemple : 
-
-* un package `model` pour les différentes classes de votre modèle de données (un module par classe).
-* un package `services` pour les traitements de votre application (un module par service).
-
-### Tests unitaires
-
-Pensez à tester votre code !
-
-Python propose plusieurs modules de tests unitaires : 
-
-* [unittest](https://docs.python.org/3/library/unittest.html)
-* [doctest](https://docs.python.org/3/library/doctest.html#module-doctest)
-
-Vous pouvez par exemple commencer avec unittest en suivant [le tutoriel correspondant sur Open Classrooms](http://openclassrooms.com/courses/apprenez-a-programmer-en-python/les-tests-unitaires-avec-unittest).
-
-### Documentation
-
-Pensez à documenter votre code !
-
-Python propose la notion de [docstrings](https://docs.python.org/3/tutorial/controlflow.html#documentation-strings) pour documenter votre code. Exemple : 
-
-```python
-def ma_fonction(x, y):
-    """
-        Ceci est la documentation de ma fonction
-    """
-    return ...
-```
 
 ## Base de données
 
@@ -164,7 +123,7 @@ Pour faire un premier test, téléchargez le fichier `bottle.py` et placez le da
 
 Lien vers la version 0.12.8 : [https://raw.githubusercontent.com/bottlepy/bottle/0.12.8/bottle.py](https://raw.githubusercontent.com/bottlepy/bottle/0.12.8/bottle.py)
 
-Voici le code permettant de faire le classique Hello World (fichier `rest-example.py`) : 
+Voici le code permettant de faire le classique Hello World (fichier `rest-example.py`	) : 
 
 ```python
 from libs.bottle import route, template, run
@@ -187,3 +146,46 @@ Vous pouvez vérifier que tout va bien :
 
 * soit via la commande `curl` : `curl -XGET http://localhost:8080/hello/world`
 * soit directement dans un navigateur : http://localhost:8080/hello/world
+
+
+## Quelques conseils pour le développement
+
+### Python
+
+Le langage de programmation utilisé est [Python](https://www.python.org), en version 3.
+
+Si vous souhaitez apprendre les bases du langage, rendez-vous sur le site [Open Classrooms](http://openclassrooms.com/courses/apprenez-a-programmer-en-python) !
+
+### Organisation du code
+
+Ne mettez pas tout votre code dans le même fichier !
+
+Utilisez la notion de [module](https://docs.python.org/3/tutorial/modules.html) pour organiser votre code correctement. Par exemple : 
+
+* un package `model` pour les différentes classes de votre modèle de données (un module par classe).
+* un package `services` pour les traitements de votre application (un module par service).
+
+### Tests unitaires
+
+Pensez à tester votre code !
+
+Python propose plusieurs modules de tests unitaires : 
+
+* [unittest](https://docs.python.org/3/library/unittest.html)
+* [doctest](https://docs.python.org/3/library/doctest.html#module-doctest)
+
+Vous pouvez par exemple commencer avec unittest en suivant [le tutoriel correspondant sur Open Classrooms](http://openclassrooms.com/courses/apprenez-a-programmer-en-python/les-tests-unitaires-avec-unittest).
+
+### Documentation
+
+Pensez à documenter votre code !
+
+Python propose la notion de [docstrings](https://docs.python.org/3/tutorial/controlflow.html#documentation-strings) pour documenter votre code. Exemple : 
+
+```python
+def ma_fonction(x, y):
+    """
+        Ceci est la documentation de ma fonction
+    """
+    return ...
+```
