@@ -45,7 +45,7 @@ Imaginons la quesiton suivante : "Je souhaite faire du Football dans la ville de
 
 Voici une requête SQL permettant de répondre à cette question, basée sur le schéma précédent : 
 
-```python
+```sql
 SELECT i.numero, i.nom, e.numero, e.nom, a.numero, a.nom
 	FROM INSTALLATION i
 		JOIN EQUIPEMENT e ON i.numero = e.numero_installation
