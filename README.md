@@ -39,6 +39,27 @@ Par rapport au modèle UML présenté précédemment, un des schémas possibles 
 
 ![database_model.png](images/database_model.png)
 
+### Exemple de requête
+
+Imaginons la quesiton suivante : "Je souhaite faire du Football dans la ville de Carquefou".
+
+Voici une requête SQL permettant de répondre à cette question, basée sur le schéma précédent : 
+
+```python
+SELECT i.numero, i.nom, e.numero, e.nom, a.numero, a.nom
+	FROM INSTALLATION i
+		JOIN EQUIPEMENT e ON i.numero = e.numero_installation
+		JOIN EQUIPEMENT_ACTIVITE ea ON e.numero = ea.numero_equipement
+		JOIN ACTIVITE a ON ea.numero_activite = a.numero
+	WHERE i.ville = 'Carquefou'
+		AND a.nom LIKE '%Football%'
+```
+
+Remarques : 
+
+* Attention à la casse ! Il est surement plus prudent de systématiquement comparer les données avec la même casse, en minuscules par exemple. En SQLite cela donnerait : `WHERE LOWER(i.ville) = carquefou'`
+* La clause `a.nom LIKE '%Football%'` n'est pas performante ! Mais comme nous n'avons pas beaucoup de données cela n'est pas très important. Dans la vraie vie cela serait à proscrire !
+
 ## Quelques exemples de code
 
 ### Lecture des données depuis les fichiers CSV
